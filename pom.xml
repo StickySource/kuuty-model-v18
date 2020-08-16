@@ -24,7 +24,24 @@
     <tag>HEAD</tag>
   </scm>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <swagger-annotations-version>1.5.22</swagger-annotations-version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <jackson-version>2.9.9</jackson-version>
+    <jackson-databind-nullable-version>0.2.1</jackson-databind-nullable-version>
+    <junit-version>4.13</junit-version>
+  </properties>
+
   <dependencies>
+    <dependency>
+      <groupId>net.stickycode.composite</groupId>
+      <artifactId>sticky-composite-unittest</artifactId>
+      <version>[3.7,4)</version>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>io.swagger</groupId>
       <artifactId>swagger-annotations</artifactId>
@@ -37,6 +54,7 @@
       <artifactId>jackson-core</artifactId>
       <version>${jackson-version}</version>
     </dependency>
+
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
@@ -47,11 +65,13 @@
       <artifactId>jackson-databind</artifactId>
       <version>${jackson-version}</version>
     </dependency>
+
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
       <artifactId>jackson-datatype-jsr310</artifactId>
       <version>${jackson-version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.openapitools</groupId>
       <artifactId>jackson-databind-nullable</artifactId>
@@ -65,23 +85,14 @@
       <version>3.0.2</version>
     </dependency>
 
-    <!-- test dependencies -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit-version}</version>
-      <scope>test</scope>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <version>1.26</version>
     </dependency>
   </dependencies>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <swagger-annotations-version>1.5.22</swagger-annotations-version>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-    <jackson-version>2.9.9</jackson-version>
-    <jackson-databind-nullable-version>0.2.1</jackson-databind-nullable-version>
-    <junit-version>4.13</junit-version>
-  </properties>
+
+
   <build>
     <plugins>
       <plugin>

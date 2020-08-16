@@ -1,0 +1,26 @@
+apiVersion: true
+kind: Deployment
+metadata:
+   name: namey
+   annotations:
+      akey: avalue
+   labels:
+      lkey: lvalue
+spec:
+   replicas: 2
+   selector:
+      matchLabels:
+         app: namey
+   template:
+      metadata:
+         labels:
+            app: namey
+      spec:
+         containers:
+         -  name: namey
+            image: quay.io/com.example/example/example:1.2
+            ports:
+            -  containerPort: 80
+            env:
+            -  name: ENV_NAME
+               value: env value
